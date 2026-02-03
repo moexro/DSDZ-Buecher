@@ -104,7 +104,7 @@ document.addEventListener("click", (e) => {
 
 dropopen.addEventListener("click", () => {
 	if (buecherTopf === null) {
-		alert("Bitte wähle zuerst eine der Klassen aus!");
+		alert("Bitte wähle zuerst eine der Klassen aus! Dafür musst du auf den Namen deiner Klasse klicken.");
 		return;
 	}
 
