@@ -116,7 +116,7 @@ function clearBookSelector() {
 
   setTimeout(() => {
     bookselector.innerHTML = "";
-  }, 300);
+  }, 1500);
 }
 
 elfteKlasse.addEventListener("click", () => {

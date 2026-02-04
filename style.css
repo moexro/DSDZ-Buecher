@@ -89,7 +89,7 @@ section.navbar {
   min-height: 16px;
   padding: 8px;
 
-  transition: transform 0.3s ease-in;
+  transition: transform 1s ease-in;
 }
 
 #bookselekt.open {
