@@ -1,6 +1,6 @@
 :root {
-  --maincolor: #f3e7d9;
-  --accent: #544349;
+  --maincolor: #e6ecf1;
+  --accent: #294563;
 }
 
 html,
@@ -80,10 +80,13 @@ section.navbar {
   background-color: var(--accent);
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
   border-radius: 0 0 8px 8px;
   box-shadow: 0 0 16px 4px;
+  gap: 16px;
 
   width: 80%;
   min-height: 16px;
@@ -110,6 +113,7 @@ section.navbar {
 
 .fachrichtung h4 {
   margin-bottom: 0;
+  margin-top: 4px;
 }
 
 .fachrichtung a {

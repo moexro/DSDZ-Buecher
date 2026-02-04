@@ -49,7 +49,7 @@ const buecherZehnte = {
     Latein:
       "https://www.ccbuchner.de/produkt/lesebuch-latein-mittelstufe-2-5011/livebook/5011",
   },
-  Geisteswissenschaften: {
+  Gesellschaftswissenschaften: {
     Geschichte:
       "https://www.ccbuchner.de/produkt/band-5-fuer-die-jahrgangsstufe-10-4148/livebook/4148",
     Politik:
@@ -86,7 +86,7 @@ const buecherNeunte = {
     "Latein (Grammatikbuch)":
       "https://www.ccbuchner.de/produkt/band-c-3-3759/livebook/3759",
   },
-  Geisteswissenschaften: {
+  Gesellschaftswissenschaften: {
     Geschichte:
       "https://www.ccbuchner.de/produkt/band-4-fuer-die-jahrgangsstufe-9-4147/livebook/4147",
     Musik:
