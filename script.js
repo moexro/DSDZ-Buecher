@@ -184,9 +184,9 @@ dropopen.addEventListener("click", () => {
 								buch === "Englisch" ||
 								buch === "Geographie")) ||
 						(buecherTopf === buecherZehnte &&
-							(buch === "Physik" || buch === "Geographie")) ||
+							(buch === "Physik" || buch === "Geographie" || buch === "Musik")) ||
 						(buecherTopf === buecherNeunte &&
-							(buch === "Physik"))
+							(buch === "Physik" || buch === "Musik"))
 					) {
 						const confirmed = confirm(
 							"Dieses Buch kann aufgrund von Lizenzbestimmungen nicht im direkt hier angezeigt werden. Du wirst zur Verlagsseite weitergeleitet.",
