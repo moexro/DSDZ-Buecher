@@ -7,6 +7,7 @@ html,
 body {
   overflow-x: hidden;
   margin: 0;
+  height: 100%;
   word-break: break-word;
   box-sizing: border-box;
   font-family:
@@ -20,18 +21,20 @@ body {
 }
 
 body {
-  overflow-y: auto;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--maincolor);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .book {
+  position: fixed;
+  top: 0;
+  left: 0;
+
   width: 100%;
+
   height: 100vh;
+  height: 100svh;
+  height: 100dvh;
 }
 
 iframe {
@@ -42,6 +45,7 @@ iframe {
 
 section.navbar {
   padding: 0 16px;
+  margin: auto;
   display: flex;
   width: 100%;
   height: 48px;
@@ -67,25 +71,29 @@ section.navbar {
 
 #bookselekt {
   position: fixed;
-  top: -400px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%); /* horizontal zentriert */
+
+  z-index: 10;
+
   background-color: var(--accent);
+
   display: flex;
   flex-direction: column;
-  padding: 8px;
+
   border-radius: 0 0 8px 8px;
   box-shadow: 0 0 16px 4px;
-  z-index: 10;
+
   width: 80%;
   min-height: 16px;
-  transition: transform 0.1s ease-in;
+  padding: 8px;
+
+  transition: transform 0.3s ease-in;
 }
 
 #bookselekt.open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(420px);
-  padding: 16px;
+  transform: translate(-50%, 48px);
 }
 
 .fachrichtung {

@@ -113,7 +113,10 @@ let buecherTopf = null;
 function clearBookSelector() {
   bookselector.classList.remove("open");
   dropopen.textContent = "Buchauswahl";
-  bookselector.innerHTML = "";
+
+  setTimeout(() => {
+    bookselector.innerHTML = "";
+  }, 300);
 }
 
 elfteKlasse.addEventListener("click", () => {
@@ -161,9 +164,7 @@ dropopen.addEventListener("click", () => {
   }
 
   if (bookselector.classList.contains("open")) {
-    bookselector.classList.remove("open");
-    dropopen.textContent = "Buchauswahl";
-    bookselector.innerHTML = "";
+    clearBookSelector();
   } else {
     bookselector.classList.add("open");
     dropopen.textContent = "Schließen";
