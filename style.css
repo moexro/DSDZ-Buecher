@@ -21,7 +21,7 @@ body {
 
 body {
 	overflow-y: auto;
-	min-height: 100%;
+	height: 100dvh;
 	background-color: var(--maincolor);
 	display: flex;
 	align-items: center;
@@ -31,7 +31,7 @@ body {
 
 .book {
 	width: 100%;
-	height: 90vh;
+	height: 100dvh;
 }
 
 iframe {
