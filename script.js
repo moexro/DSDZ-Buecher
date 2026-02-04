@@ -62,8 +62,43 @@ const buecherZehnte = {
 	},
 };
 
+const buecherNeunte = {
+	Naturwissenschaften: {
+		Chemie: "https://www.click-and-study.de/Player/id/835/page/8",
+		Biologie: "https://www.ccbuchner.de/produkt/biologie-10-7236/livebook/7236",
+		Physik: "https://blickinsbuch.westermann.de/978-3-507-11818-8/index-h5.html#page=1",
+		Mathe: "https://klettbib.livebook.de/978-3-12-733091-5/",
+		Informatik:
+			"https://www.ccbuchner.de/_files_media/livebook/7198/",
+	},
+	Sprachen: {
+		Deutsch:
+			"https://www.cornelsen.de/produkte/deutschbuch-gymnasium-schulbuch-9-jahrgangsstufe-9783060627806",
+		Englisch:
+			"https://static.cornelsen.de/bgd/97/83/06/03/34/94/0/9783060334940_x1LIAB/index.html",
+		Französisch:
+			"https://static.cornelsen.de/bgd/97/83/06/12/21/74/4/9783061221744_x1LIAB/index.html",
+		Latein:
+			"https://www.ccbuchner.de/produkt/lesebuch-latein-mittelstufe-2-5011/livebook/5011",
+	},
+	Geisteswissenschaften: {
+		Geschichte:
+			"https://www.ccbuchner.de/_files_media/livebook/4147/",
+		Politik:
+			"https://www.ccbuchner.de/produkt/politik-aktuell-10-7707/livebook/7707",
+		Geographie: "https://blickinsbuch.westermann.de/978-3-14-115087-2/",
+		Wirtschaft: "https://www.ccbuchner.de/produkt/band-10-7755/livebook/7755",
+		Katholisch: "https://klettbib.livebook.de/978-3-12-006889-1/",
+		Evangelisch:
+			"https://www.ccbuchner.de/produkt/theologisch-10-4988/livebook/4988",
+		Ethik:
+			"https://www.ccbuchner.de/produkt/abenteuer-ethik-10-7639/livebook/7639",
+	},
+};
+
 const elfteKlasse = document.getElementById("eleven");
 const zehnteKlasse = document.getElementById("ten");
+const neunteKlasse = document.getElementById("nine");
 
 const bookselector = document.getElementById("bookselekt");
 const bookIframe = document.getElementById("bookframe");
@@ -79,6 +114,7 @@ function clearBookSelector() {
 elfteKlasse.addEventListener("click", () => {
 	elfteKlasse.classList.add("active");
 	zehnteKlasse.classList.remove("active");
+	neunteKlasse.classList.remove("active");
 	buecherTopf = buecherElfte;
 	clearBookSelector();
 });
@@ -86,7 +122,16 @@ elfteKlasse.addEventListener("click", () => {
 zehnteKlasse.addEventListener("click", () => {
 	zehnteKlasse.classList.add("active");
 	elfteKlasse.classList.remove("active");
+	neunteKlasse.classList.remove("active");
 	buecherTopf = buecherZehnte;
+	clearBookSelector();
+});
+
+neunteKlasse.addEventListener("click", () => {
+	neunteKlasse.classList.add("active");
+	zehnteKlasse.classList.remove("active");
+	elfteKlasse.classList.remove("active");
+	buecherTopf = buecherNeunte;
 	clearBookSelector();
 });
 
@@ -137,6 +182,8 @@ dropopen.addEventListener("click", () => {
 								buch === "Englisch" ||
 								buch === "Geographie")) ||
 						(buecherTopf === buecherZehnte &&
+							(buch === "Physik" || buch === "Geographie")) ||
+						(buecherTopf === buecherNeunte &&
 							(buch === "Physik" || buch === "Geographie"))
 					) {
 						const confirmed = confirm(
