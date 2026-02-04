@@ -91,6 +91,7 @@ const buecherNeunte = {
 		Musik: "https://www.helbling.com/sites/default/files/media/documents/386227442_DEMO_Tonart_9_10_B_2021_sample.pdf",
 		},
 		Religionen: {
+		Katholisch: "https://klettbib.livebook.de/978-3-12-006889-1/",
 		Evangelisch:
 			"https://www.ccbuchner.de/produkt/theologisch-9-4987/livebook/4987",
 		Ethik:
