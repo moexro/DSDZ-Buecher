@@ -14,12 +14,14 @@ const buecherElfte = {
 		Spanisch:
 			"https://static.cornelsen.de/bgd/97/83/06/02/24/50/0/9783060224500_x1LIAB/index.html",
 	},
-	Geisteswissenschaften: {
+	Gesellschaftswissenschaften: {
 		Geschichte: "https://www.ccbuchner.de/produkt/band-11-8331/livebook/8331",
 		Politik:
 			"https://www.ccbuchner.de/produkt/politik-aktuell-11-7708/livebook/7708",
 		Geographie: "https://blickinsbuch.westermann.de/978-3-14-115093-3/",
 		Wirtschaft: "https://www.ccbuchner.de/produkt/band-11-7756/livebook/7756",
+		},
+		Religionen: {
 		Katholisch: "https://klettbib.livebook.de/978-3-12-007395-6/",
 		Evangelisch:
 			"https://www.ccbuchner.de/produkt/oberstufe-11-8325/livebook/8325",
@@ -54,6 +56,9 @@ const buecherZehnte = {
 			"https://www.ccbuchner.de/produkt/politik-aktuell-10-7707/livebook/7707",
 		Geographie: "https://blickinsbuch.westermann.de/978-3-14-115087-2/",
 		Wirtschaft: "https://www.ccbuchner.de/produkt/band-10-7755/livebook/7755",
+		Musik: "https://www.helbling.com/sites/default/files/media/documents/386227442_DEMO_Tonart_9_10_B_2021_sample.pdf",
+		},
+		Religionen: {
 		Katholisch: "https://klettbib.livebook.de/978-3-12-007386-4/",
 		Evangelisch:
 			"https://www.ccbuchner.de/produkt/theologisch-10-4988/livebook/4988",
@@ -65,7 +70,7 @@ const buecherZehnte = {
 const buecherNeunte = {
 	Naturwissenschaften: {
 		Chemie: "https://www.click-and-study.de/Player/id/835/page/8",
-		Biologie: "https://www.ccbuchner.de/produkt/biologie-10-7236/livebook/7236",
+		Biologie: "https://www.ccbuchner.de/produkt/biologie-9-7235/livebook/7235",
 		Physik: "https://blickinsbuch.westermann.de/978-3-507-11818-8/index-h5.html#page=1",
 		Mathe: "https://klettbib.livebook.de/978-3-12-733091-5/",
 		Informatik:
@@ -73,26 +78,23 @@ const buecherNeunte = {
 	},
 	Sprachen: {
 		Deutsch:
-			"https://www.cornelsen.de/produkte/deutschbuch-gymnasium-schulbuch-9-jahrgangsstufe-9783060627806",
-		Englisch:
-			"https://static.cornelsen.de/bgd/97/83/06/03/34/94/0/9783060334940_x1LIAB/index.html",
+			"https://static.cornelsen.de/bgd/97/83/06/06/27/80/6/9783060627806_x1LIAB/index.html",
 		Französisch:
-			"https://static.cornelsen.de/bgd/97/83/06/12/21/74/4/9783061221744_x1LIAB/index.html",
-		Latein:
-			"https://www.ccbuchner.de/produkt/lesebuch-latein-mittelstufe-2-5011/livebook/5011",
+			"https://klettbib.livebook.de/978-3-12-622281-5/",
+		Latein(Lesebuch):
+			"https://www.ccbuchner.de/produkt/lesebuch-latein-mittelstufe-1-5010/livebook/5010",
+			Latein(Grammatikbuch): "https://www.ccbuchner.de/produkt/band-c-3-3759/livebook/3759",
 	},
 	Geisteswissenschaften: {
 		Geschichte:
-			"https://www.ccbuchner.de/_files_media/livebook/4147/",
-		Politik:
-			"https://www.ccbuchner.de/produkt/politik-aktuell-10-7707/livebook/7707",
-		Geographie: "https://blickinsbuch.westermann.de/978-3-14-115087-2/",
-		Wirtschaft: "https://www.ccbuchner.de/produkt/band-10-7755/livebook/7755",
-		Katholisch: "https://klettbib.livebook.de/978-3-12-006889-1/",
+			"https://www.ccbuchner.de/produkt/band-4-fuer-die-jahrgangsstufe-9-4147/livebook/4147",
+		Musik: "https://www.helbling.com/sites/default/files/media/documents/386227442_DEMO_Tonart_9_10_B_2021_sample.pdf",
+		},
+		Religionen: {
 		Evangelisch:
-			"https://www.ccbuchner.de/produkt/theologisch-10-4988/livebook/4988",
+			"https://www.ccbuchner.de/produkt/theologisch-9-4987/livebook/4987",
 		Ethik:
-			"https://www.ccbuchner.de/produkt/abenteuer-ethik-10-7639/livebook/7639",
+			"https://www.ccbuchner.de/produkt/abenteuer-ethik-9-7638/livebook/7638",
 	},
 };
 
