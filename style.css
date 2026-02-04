@@ -60,7 +60,7 @@ section.navbar {
 
 .navbar #year {
   display: flex;
-  gap: 16px;
+  gap: 24px;
 }
 
 #dropopen {
@@ -126,4 +126,33 @@ a {
 a.active {
   filter: brightness(200%);
   font-weight: 600;
+}
+
+#linkedsite {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 1000px) {
+  .navbar #year {
+    flex-direction: column;
+    gap: 8px;
+  }
+  section.navbar {
+    height: 128px;
+  }
+  #dropopen {
+    margin-top: -64px;
+  }
+  #linkedsite {
+    position: fixed;
+    top: 42px;
+    left: 70%;
+    text-align: end;
+    width: 50%;
+  }
+  #bookselekt.open {
+    transform: translate(-50%, 128px);
+  }
 }

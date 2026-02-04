@@ -70,7 +70,7 @@ const buecherZehnte = {
 
 const buecherNeunte = {
   Naturwissenschaften: {
-    Chemie: "https://www.click-and-study.de/Player/id/835/page/8",
+    Chemie: "https://www.ccbuchner.de/produkt/chemie-9-ntg-5051/livebook/5051",
     Biologie: "https://www.ccbuchner.de/produkt/biologie-9-7235/livebook/7235",
     Physik:
       "https://blickinsbuch.westermann.de/978-3-507-11818-8/index-h5.html#page=1",
@@ -107,6 +107,7 @@ const neunteKlasse = document.getElementById("nine");
 
 const bookselector = document.getElementById("bookselekt");
 const bookIframe = document.getElementById("bookframe");
+const linked = document.getElementById("linkedsite");
 
 let buecherTopf = null;
 
@@ -212,6 +213,9 @@ dropopen.addEventListener("click", () => {
             return;
           }
           const url = buecherTopf[fachrichtung][buch];
+
+          linked.href = url;
+          linked.textContent = url;
           bookIframe.src = url;
         });
         fachrichtungDiv.appendChild(buchLink);
