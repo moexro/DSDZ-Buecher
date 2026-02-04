@@ -1,121 +1,121 @@
 :root {
-	--maincolor: #f3e7d9;
-	--accent: #544349;
+  --maincolor: #f3e7d9;
+  --accent: #544349;
 }
 
 html,
 body {
-	overflow-x: hidden;
-	margin: 0;
-	word-break: break-word;
-	box-sizing: border-box;
-	font-family:
-		system-ui,
-		-apple-system,
-		"Segoe UI",
-		Roboto,
-		"Helvetica Neue",
-		Arial;
-	box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  word-break: break-word;
+  box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  box-sizing: border-box;
 }
 
 body {
-	overflow-y: auto;
-	height: 100dvh;
-	background-color: var(--maincolor);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
+  background-color: var(--maincolor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .book {
-	width: 100%;
-	height: 100dvh;
+  width: 100%;
+  height: 100vh;
 }
 
 iframe {
-	width: 100%;
-	height: 100%;
-	border: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 section.navbar {
-	padding: 0 16px;
-	display: flex;
-	width: 100%;
-	height: 48px;
-	align-items: center;
-	background-color: var(--accent);
-	position: fixed;
-	left: 0;
-	top: 0;
-	box-shadow: 0 0 8px 2px;
-	z-index: 100;
+  padding: 0 16px;
+  display: flex;
+  width: 100%;
+  height: 48px;
+  align-items: center;
+  background-color: var(--accent);
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 8px 2px;
+  z-index: 100;
 }
 
 .navbar #year {
-	display: flex;
-	gap: 16px;
+  display: flex;
+  gap: 16px;
 }
 
 #dropopen {
-	margin-left: auto;
-	margin-right: 48px;
-	font-weight: 600;
+  margin-left: auto;
+  margin-right: 48px;
+  font-weight: 600;
 }
 
 #bookselekt {
-	position: fixed;
-	top: -400px;
-	background-color: var(--accent);
-	display: flex;
-	flex-direction: column;
-	padding: 8px;
-	border-radius: 0 0 8px 8px;
-	box-shadow: 0 0 16px 4px;
-	z-index: 10;
-	width: 80%;
-	min-height: 16px;
-	transition: transform 0.1s ease-in;
+  position: fixed;
+  top: -400px;
+  background-color: var(--accent);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 16px 4px;
+  z-index: 10;
+  width: 80%;
+  min-height: 16px;
+  transition: transform 0.1s ease-in;
 }
 
 #bookselekt.open {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transform: translateY(420px);
-	padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(420px);
+  padding: 16px;
 }
 
 .fachrichtung {
-	color: var(--maincolor);
-	font-weight: 600;
-	margin: 8px 0 4px 0;
-	text-align: center;
-	text-decoration: none;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	gap: 8px;
+  color: var(--maincolor);
+  font-weight: 600;
+  margin: 8px 0 4px 0;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .fachrichtung h4 {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .fachrichtung a {
-	font-weight: 300;
+  font-weight: 300;
 }
 
 a {
-	color: var(--maincolor);
-	text-decoration: none;
-	font-weight: 100;
-	cursor: pointer;
+  color: var(--maincolor);
+  text-decoration: none;
+  font-weight: 100;
+  cursor: pointer;
 }
 
 a.active {
-	filter: brightness(200%);
-	font-weight: 600;
+  filter: brightness(200%);
+  font-weight: 600;
 }
