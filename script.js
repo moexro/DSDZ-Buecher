@@ -67,7 +67,7 @@ const buecherZehnte = {
       "https://www.ccbuchner.de/produkt/abenteuer-ethik-10-7639/livebook/7639",
   },
 };
-
+//neunte
 const buecherNeunte = {
   Naturwissenschaften: {
     Chemie: "https://www.ccbuchner.de/produkt/chemie-9-ntg-5051/livebook/5051",
