@@ -81,9 +81,9 @@ const buecherNeunte = {
 			"https://static.cornelsen.de/bgd/97/83/06/06/27/80/6/9783060627806_x1LIAB/index.html",
 		Französisch:
 			"https://klettbib.livebook.de/978-3-12-622281-5/",
-		Latein(Lesebuch):
+		"Latein (Lesebuch)":
 			"https://www.ccbuchner.de/produkt/lesebuch-latein-mittelstufe-1-5010/livebook/5010",
-			Latein(Grammatikbuch): "https://www.ccbuchner.de/produkt/band-c-3-3759/livebook/3759",
+			"Latein (Grammatikbuch)": "https://www.ccbuchner.de/produkt/band-c-3-3759/livebook/3759",
 	},
 	Geisteswissenschaften: {
 		Geschichte:
