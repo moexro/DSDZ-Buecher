@@ -75,7 +75,7 @@ section.navbar {
   left: 50%;
   transform: translate(-50%, -100%); /* horizontal zentriert */
 
-  z-index: 10;
+  z-index: 90;
 
   background-color: var(--accent);
 
@@ -136,6 +136,14 @@ a.active {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+#iframe-catcher {
+  position: fixed;
+  inset: 0;
+  z-index: 50; /* unter Navbar, über iframe */
+  background: transparent;
+  pointer-events: auto;
 }
 
 @media (max-width: 1000px) {

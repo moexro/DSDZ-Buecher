@@ -156,10 +156,11 @@ document.addEventListener("click", (e) => {
   }
 });
 
-bookIframe.addEventListener("mouseenter", () => {
-  if (bookselector.classList.contains("open")) {
-    clearBookSelector();
-  }
+const catcher = document.getElementById("iframe-catcher");
+
+catcher.addEventListener("pointerdown", () => {
+  clearBookSelector();
+  catcher.style.pointerEvents = "none";
 });
 
 dropopen.addEventListener("click", () => {
@@ -176,6 +177,7 @@ dropopen.addEventListener("click", () => {
   } else {
     bookselector.classList.add("open");
     dropopen.textContent = "Schließen";
+    catcher.style.pointerEvents = "auto";
 
     Object.keys(buecherTopf).forEach((fachrichtung) => {
       const fachrichtungDiv = document.createElement("div");
@@ -189,9 +191,7 @@ dropopen.addEventListener("click", () => {
         buchLink.textContent = buch;
 
         buchLink.addEventListener("click", () => {
-          bookselector.classList.remove("open");
-          dropopen.textContent = "Buchauswahl";
-          bookselector.innerHTML = "";
+          clearBookSelector();
           if (
             (buecherTopf === buecherElfte &&
               (buch === "Physik" ||
