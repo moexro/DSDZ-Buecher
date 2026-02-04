@@ -110,13 +110,17 @@ const bookIframe = document.getElementById("bookframe");
 
 let buecherTopf = null;
 
+let lockDrop = false;
+
 function clearBookSelector() {
   bookselector.classList.remove("open");
   dropopen.textContent = "Buchauswahl";
+  lockDrop = true;
 
   setTimeout(() => {
     bookselector.innerHTML = "";
-  }, 1000);
+    lockDrop = false;
+  }, 300);
 }
 
 elfteKlasse.addEventListener("click", () => {
@@ -156,6 +160,7 @@ document.addEventListener("click", (e) => {
 });
 
 dropopen.addEventListener("click", () => {
+  if (lockDrop) return;
   if (buecherTopf === null) {
     alert(
       "Bitte wähle zuerst eine der Klassen aus! Dafür musst du auf den Namen deiner Klasse klicken.",
