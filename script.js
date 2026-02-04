@@ -151,11 +151,13 @@ neunteKlasse.addEventListener("click", () => {
 const dropopen = document.getElementById("dropopen");
 
 document.addEventListener("click", (e) => {
-  if (
-    !bookselector.contains(e.target) &&
-    e.target !== dropopen &&
-    bookselector.classList.contains("open")
-  ) {
+  if (e.target !== dropopen) {
+    clearBookSelector();
+  }
+});
+
+bookIframe.addEventListener("mouseenter", () => {
+  if (bookselector.classList.contains("open")) {
     clearBookSelector();
   }
 });
