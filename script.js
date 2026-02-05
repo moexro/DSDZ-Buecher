@@ -26,7 +26,7 @@ const buecherElfte = {
     Evangelisch:
       "https://www.ccbuchner.de/produkt/oberstufe-11-8325/livebook/8325",
     Ethik:
-      "https://www.ccbuchner.de/produkt/ethik-in-der-oberstufe-11-8320/livebook/8320",
+      "https://blickinsbuch.westermann.de/978-3-14-161339-1/index-h5.html",
   },
 };
 
@@ -200,7 +200,8 @@ dropopen.addEventListener("click", () => {
             (buecherTopf === buecherElfte &&
               (buch === "Physik" ||
                 buch === "Englisch" ||
-                buch === "Geographie")) ||
+                buch === "Geographie")||
+                buch === "Ethik") ||
             (buecherTopf === buecherZehnte &&
               (buch === "Physik" ||
                 buch === "Geographie" ||
