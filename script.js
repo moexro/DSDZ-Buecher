@@ -155,7 +155,9 @@ neunteKlasse.addEventListener("click", () => {
 const dropopen = document.getElementById("dropopen");
 
 document.addEventListener("click", (e) => {
-  if (e.target !== dropopen) {
+  if (!bookselector.contains(e.target) &&
+    e.target !== dropopen
+  ) {
     clearBookSelector();
   }
 });
