@@ -119,8 +119,7 @@ function clearBookSelector() {
   bookselector.classList.remove("open");
   dropopen.textContent = "Buchauswahl";
   lockDrop = true;
-  catcher.style.pointerEvents = "none";
-  catcher.style.display = "none";
+	catcher.classList.remove("active");
 
   setTimeout(() => {
     bookselector.innerHTML = "";
@@ -182,7 +181,7 @@ dropopen.addEventListener("click", () => {
   } else {
     bookselector.classList.add("open");
     dropopen.textContent = "Schließen";
-    catcher.style.pointerEvents = "auto";
+		catcher.classList.add("active");
 
     Object.keys(buecherTopf).forEach((fachrichtung) => {
       const fachrichtungDiv = document.createElement("div");
