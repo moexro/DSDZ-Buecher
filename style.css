@@ -139,11 +139,16 @@ a.active {
 }
 
 #iframe-catcher {
-  display: none;
+	display: none;
+  pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 50; /* unter Navbar, über iframe */
   background: transparent;
+}
+
+#iframe-catcher.active {
+  display: block;
   pointer-events: auto;
 }
 
