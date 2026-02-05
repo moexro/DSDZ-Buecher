@@ -143,7 +143,7 @@ a.active {
   pointer-events: none;
   position: fixed;
   inset: 0;
-  z-index: 50; /* unter Navbar, über iframe */
+  z-index: 1; /* unter Navbar, über iframe */
   background: transparent;
 }
 
