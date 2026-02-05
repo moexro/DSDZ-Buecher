@@ -113,10 +113,14 @@ let buecherTopf = null;
 
 let lockDrop = false;
 
+const catcher = document.getElementById("iframe-catcher");
+
 function clearBookSelector() {
   bookselector.classList.remove("open");
   dropopen.textContent = "Buchauswahl";
   lockDrop = true;
+  catcher.style.pointerEvents = "none";
+  catcher.style.display = "none";
 
   setTimeout(() => {
     bookselector.innerHTML = "";
@@ -156,11 +160,10 @@ document.addEventListener("click", (e) => {
   }
 });
 
-const catcher = document.getElementById("iframe-catcher");
+
 
 catcher.addEventListener("pointerdown", () => {
   clearBookSelector();
-  catcher.style.pointerEvents = "none";
 });
 
 dropopen.addEventListener("click", () => {
