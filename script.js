@@ -107,7 +107,6 @@ const neunteKlasse = document.getElementById("nine");
 
 const bookselector = document.getElementById("bookselekt");
 const bookIframe = document.getElementById("bookframe");
-const linked = document.getElementById("linkedsite");
 
 let buecherTopf = null;
 
@@ -196,21 +195,9 @@ dropopen.addEventListener("click", () => {
 
         buchLink.addEventListener("click", () => {
           clearBookSelector();
-          if (
-            (buecherTopf === buecherElfte &&
-              (buch === "Physik" ||
-                buch === "Englisch" ||
-                buch === "Geographie")||
-                buch === "Ethik") ||
-            (buecherTopf === buecherZehnte &&
-              (buch === "Physik" ||
-                buch === "Geographie" ||
-                buch === "Musik")) ||
-            (buecherTopf === buecherNeunte &&
-              (buch === "Physik" || buch === "Musik"))
-          ) {
+          
             const confirmed = confirm(
-              "Dieses Buch kann aufgrund von Lizenzbestimmungen nicht im direkt hier angezeigt werden. Du wirst zur Verlagsseite weitergeleitet.",
+              "Du wirst zur Verlagsseite weitergeleitet.",
             );
             if (!confirmed) {
               return;
@@ -218,12 +205,8 @@ dropopen.addEventListener("click", () => {
             buchLink.href = buecherTopf[fachrichtung][buch];
             buchLink.target = "_blank";
             return;
-          }
+          
           const url = buecherTopf[fachrichtung][buch];
-
-          linked.href = url;
-          linked.textContent = url;
-          bookIframe.src = url;
         });
         fachrichtungDiv.appendChild(buchLink);
       });
