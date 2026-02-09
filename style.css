@@ -132,11 +132,7 @@ a.active {
   font-weight: 600;
 }
 
-#linkedsite {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
+
 
 #iframe-catcher {
 	display: none;
@@ -152,31 +148,4 @@ a.active {
   pointer-events: auto;
 }
 
-@media (max-width: 1000px) {
-  .navbar #year {
-    flex-direction: column;
-    gap: 8px;
-  }
-  section.navbar {
-    height: 128px;
-  }
-  #dropopen {
-    margin-top: -64px;
-  }
-  #linkedsite {
-    position: fixed;
-    top: 42px;
-    left: 70%;
-    text-align: end;
-    width: 50%;
-  }
-  #bookselekt.open {
-    transform: translate(-50%, 128px);
-  }
-  .book {
-    height: calc(100vh - 80px);
-    height: calc(100svh - 80px);
-    height: calc(100dvh - 80px);
-    top: 80px;
-  }
-}
+
