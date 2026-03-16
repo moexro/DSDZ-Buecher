@@ -1,6 +1,6 @@
 const buecherElfte = {
   Naturwissenschaften: {
-    Chemie: "https://www.ccbuchner.de/produkt/chemie-11-ntg-7240/livebook/7240",
+    Chemie: "https://static.cornelsen.de/bgd/97/83/46/48/50/43/5/9783464850435_x1LIAB/index.html",
     Physik: "https://blickinsbuch.westermann.de/978-3-14-152400-0/",
     Mathe: "https://klettbib.livebook.de/978-3-12-735010-4/",
   },
