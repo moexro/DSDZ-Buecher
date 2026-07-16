@@ -1,3 +1,31 @@
+const buecherZwoelfte = {
+  Naturwissenschaften: {
+    Chemie: "https://www.ccbuchner.de/_files_media/livebook/7241/",
+    Physik: "https://blickinsbuch.westermann.de/978-3-14-152407-9/index-h5.html#page=1",
+    Biophysik: "https://www.ccbuchner.de/_files_media/livebook/8290/",
+    Biologie: "https://www.ccbuchner.de/_files_media/livebook/8646/",
+    Informatik: "https://static.cornelsen.de/bgd/97/83/63/70/29/60/6/9783637029606_x1LIAB/index.html",
+    Mathe: "https://klettbib.livebook.de/978-3-12-735020-3/"
+  },
+  Sprachen: {
+    Latein: "https://www.ccbuchner.de/_files_media/livebook/8749/",
+    Englisch: "https://blickinsbuch.westermann.de/978-3-425-73096-7/index-h5.html#page=1",
+    Deutsch: "https://klettbib.livebook.de/978-3-12-350568-3/",
+    Französisch: "",
+    Spanisch: "",
+  },
+  Gesellschaftswissenschaften: {
+    Geschichte: "https://www.ccbuchner.de/_files_media/livebook/8332/",
+    "Politik und Gesellschaft (gA)": "https://www.ccbuchner.de/_files_media/livebook/7709/",
+    "Wirtschaft und Recht": "https://www.ccbuchner.de/_files_media/livebook/7757/",
+    Geographie: "https://blickinsbuch.westermann.de/978-3-14-151945-7/index-h5.html#page=1",
+  },
+  Religionen: {
+  }
+}
+
+
+
 const buecherElfte = {
   Naturwissenschaften: {
     Chemie: "https://static.cornelsen.de/bgd/97/83/46/48/50/43/5/9783464850435_x1LIAB/index.html",
@@ -101,6 +129,7 @@ const buecherNeunte = {
   },
 };
 
+const zwoelfteKlasse = document.getElementById("twelve");
 const elfteKlasse = document.getElementById("eleven");
 const zehnteKlasse = document.getElementById("ten");
 const neunteKlasse = document.getElementById("nine");
@@ -126,7 +155,18 @@ function clearBookSelector() {
   }, 300);
 }
 
+zwoelfteKlasse.addEventListener("click", () => {
+  zwoelfteKlasse.classList.add("active");
+  elfteKlasse.classList.remove("active");
+  zehnteKlasse.classList.remove("active");
+  neunteKlasse.classList.remove("active");
+  buecherTopf = buecherZwoelfte;
+  clearBookSelector();
+});
+
+
 elfteKlasse.addEventListener("click", () => {
+  zwoelfteKlasse.classList.remove("active");
   elfteKlasse.classList.add("active");
   zehnteKlasse.classList.remove("active");
   neunteKlasse.classList.remove("active");
@@ -135,6 +175,7 @@ elfteKlasse.addEventListener("click", () => {
 });
 
 zehnteKlasse.addEventListener("click", () => {
+  zwoelfteKlasse.classList.remove("active");
   zehnteKlasse.classList.add("active");
   elfteKlasse.classList.remove("active");
   neunteKlasse.classList.remove("active");
@@ -143,6 +184,7 @@ zehnteKlasse.addEventListener("click", () => {
 });
 
 neunteKlasse.addEventListener("click", () => {
+  zwoelfteKlasse.classList.remove("active");
   neunteKlasse.classList.add("active");
   zehnteKlasse.classList.remove("active");
   elfteKlasse.classList.remove("active");
