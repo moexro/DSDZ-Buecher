@@ -21,7 +21,7 @@ const buecherZwoelfte = {
     Geographie: "https://blickinsbuch.westermann.de/978-3-14-151945-7/index-h5.html#page=1",
   },
   Religionen: {
-	  "Katholisch Mom": "https://jsgkar.sharepoint.com/sites/1k2KatholischeReligionMom26-27/Kursmaterialien/Forms/AllItems.aspx"
+	  "Katholisch Mom": "https://jsgkar.sharepoint.com/:b:/s/1k2KatholischeReligionMom26-27/IQDU86k2ONSmR5IWpN-IcCGZAb653Hs0JWWH1nqQupn1tek?e=FogZ7V"
   }
 }
 
