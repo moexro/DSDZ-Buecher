@@ -12,7 +12,7 @@ const buecherZwoelfte = {
     Englisch: "https://blickinsbuch.westermann.de/978-3-425-73096-7/index-h5.html#page=1",
     Deutsch: "https://klettbib.livebook.de/978-3-12-350568-3/",
     Französisch: "",
-    Spanisch: "",
+    Spanisch: "https://static.cornelsen.de/bgd/97/83/06/02/24/52/4/9783060224524_x1LIAB/index.html",
   },
   Gesellschaftswissenschaften: {
     Geschichte: "https://www.ccbuchner.de/_files_media/livebook/8332/",
