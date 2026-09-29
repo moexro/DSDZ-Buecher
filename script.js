@@ -4,7 +4,7 @@ const buecherZwoelfte = {
     Physik: "https://blickinsbuch.westermann.de/978-3-14-152407-9/index-h5.html#page=1",
     Biophysik: "https://www.ccbuchner.de/_files_media/livebook/8290/",
     Biologie: "https://www.ccbuchner.de/_files_media/livebook/8646/",
-    Informatik: "https://static.cornelsen.de/bgd/97/83/63/70/29/60/6/9783637029606_x1LIAB/index.html",
+    Informatik: "https://static.cornelsen.de/bgd/97/83/63/70/24/76/2/9783637024762_x1LIAB/index.html",
     Mathe: "https://klettbib.livebook.de/978-3-12-735020-3/"
   },
   Sprachen: {
