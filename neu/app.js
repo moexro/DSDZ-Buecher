@@ -65,8 +65,6 @@
   const suche = $("suche");
   const keineTreffer = $("keine-treffer");
 
-  let aktuelleKlasse = null;
-
   const esc = (s) =>
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -154,7 +152,9 @@
     ).join("");
     schalter.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-klasse]");
-      if (btn) waehleKlasse(Number(btn.dataset.klasse));
+      if (!btn) return;
+      waehleKlasse(Number(btn.dataset.klasse));
+      window.scrollTo(0, 0);
     });
   }
 
@@ -186,14 +186,16 @@
 
     uebersicht.addEventListener("click", (e) => {
       const karte = e.target.closest("[data-klasse]");
-      if (karte) waehleKlasse(Number(karte.dataset.klasse));
+      if (!karte) return;
+      waehleKlasse(Number(karte.dataset.klasse));
+      schalter.querySelector(`[data-klasse="${karte.dataset.klasse}"]`).focus();
     });
   }
 
   function kachel(bereich, fach, url, i) {
     const [name, zusatz] = fachUndZusatz(fach);
     const v = verlag(url);
-    const suchtext = normalisieren(`${fach} ${kuerzel(fach)} ${v} ${bereich}`);
+    const suchtext = normalisieren(`${name} ${zusatz} ${kuerzel(fach)} ${v} ${bereich}`);
     const zusatzHtml = zusatz ? ` <span class="tag">${esc(zusatz)}</span>` : "";
     const kopf = `
       <span class="tile-badge">${esc(kuerzel(fach))}</span>
@@ -244,18 +246,16 @@
     $("hero-text").textContent = text;
   }
 
-  function waehleKlasse(klasse, { hashSetzen = true } = {}) {
-    aktuelleKlasse = klasse;
+  function waehleKlasse(klasse) {
     klasseSpeichern(klasse);
 
     for (const btn of schalter.querySelectorAll(".grade-btn")) {
       btn.setAttribute("aria-pressed", String(Number(btn.dataset.klasse) === klasse));
     }
 
-    if (hashSetzen) {
-      const ziel = klasse ? `#klasse-${klasse}` : location.pathname + location.search;
-      history.replaceState(null, "", ziel);
-    }
+    // #klasse-12 wirkt nur beim Öffnen. Bleibt er in der Adresse, öffnen Lesezeichen und
+    // Home-Bildschirm-Icons für immer diese Klasse, auch nach dem Wechsel ins neue Schuljahr.
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
 
     suche.value = "";
     keineTreffer.hidden = true;
@@ -271,7 +271,7 @@
 
     const { verfuegbar, fehlend, bereiche } = zaehle(klasse);
     let text = `${mehrzahl(verfuegbar, "Buch", "Bücher")} in ${mehrzahl(bereiche, "Fachbereich", "Fachbereichen")}`;
-    if (fehlend) text += ` · ${fehlend} folgt`;
+    if (fehlend) text += ` · ${mehrzahl(fehlend, "folgt", "folgen")}`;
     heroSetzen("Deine Bücher", `${klasse}. Klasse`, text);
     document.title = `${klasse}. Klasse · DSDZ-Bücher`;
 
@@ -283,12 +283,12 @@
   /* ---------- Suche ---------- */
 
   function filtern() {
-    const q = normalisieren(suche.value.trim());
+    const woerter = normalisieren(suche.value.trim()).split(/\s+/).filter(Boolean);
     let treffer = 0;
     for (const bereich of inhalt.querySelectorAll(".fachbereich")) {
       let sichtbar = 0;
       for (const k of bereich.querySelectorAll(".tile")) {
-        const passt = !q || k.dataset.suche.includes(q);
+        const passt = woerter.every((w) => k.dataset.suche.includes(w));
         k.hidden = !passt;
         if (passt) sichtbar++;
       }
@@ -306,6 +306,8 @@
       suche.value = "";
       filtern();
       suche.blur();
+    } else if (e.key === "Enter") {
+      suche.blur();
     }
   });
 
@@ -321,12 +323,12 @@
 
   window.addEventListener("hashchange", () => {
     const k = klasseAusHash();
-    if (k !== aktuelleKlasse) waehleKlasse(k, { hashSetzen: false });
+    if (k) waehleKlasse(k);
   });
 
   /* ---------- Start ---------- */
 
   schalterBauen();
   uebersichtBauen();
-  waehleKlasse(klasseAusHash() ?? gespeicherteKlasse(), { hashSetzen: true });
+  waehleKlasse(klasseAusHash() ?? gespeicherteKlasse());
 })();

@@ -15,11 +15,11 @@
   --shadow-lg: 0 18px 40px -16px rgba(22, 38, 58, 0.45);
 
   /* Fachbereichsfarben */
-  --nat: #14855a;
+  --nat: #0f7a50;
   --nat-soft: #e1f3ea;
   --spr: #2b64c4;
   --spr-soft: #e3ecfb;
-  --ges: #b05d0c;
+  --ges: #9a4f08;
   --ges-soft: #fbeddb;
   --rel: #7046b6;
   --rel-soft: #eee7fa;
@@ -73,6 +73,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -135,13 +136,14 @@ svg {
 
 .topbar-inner {
   max-width: 1100px;
-  height: 60px;
+  min-height: 60px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 4px 12px;
 }
 
 .brand {
@@ -219,6 +221,8 @@ svg {
   background: #fff;
   color: var(--navy);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  outline: 2px solid transparent;
+  outline-offset: -2px;
 }
 
 .brand:focus-visible,
@@ -335,7 +339,7 @@ svg {
 
 .search input::placeholder {
   color: var(--muted);
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .search-hint {
@@ -486,6 +490,7 @@ svg {
 
 .fb-title {
   min-width: 0;
+  overflow-wrap: anywhere;
   margin: 0;
   font-size: 19px;
   font-weight: 750;
@@ -686,8 +691,20 @@ a.tile:focus-visible {
   }
 
   .topbar-inner {
-    height: 56px;
+    min-height: 56px;
     padding: 0 14px;
+    gap: 4px 8px;
+  }
+
+  .brand {
+    gap: 8px;
+    padding-right: 0;
+    font-size: 16px;
+  }
+
+  .brand-logo {
+    width: 34px;
+    height: 34px;
   }
 
   .grade-switch-label,
@@ -696,7 +713,7 @@ a.tile:focus-visible {
   }
 
   .grade-btn {
-    width: 42px;
+    width: 38px;
   }
 
   .hero-inner {
@@ -743,7 +760,7 @@ a.tile:focus-visible {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 359px) {
   .brand-name {
     display: none;
   }
