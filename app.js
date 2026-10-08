@@ -13,6 +13,8 @@
       '<circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />',
     Religionen:
       '<path d="M12 2v6" /><path d="M9 5h6" /><path d="M6 22V12l6-4 6 4v10" /><path d="M10 22v-4a2 2 0 0 1 4 0v4" /><path d="M2 22h20" />',
+    Sport:
+      '<rect x="2" y="9" width="2.5" height="6" rx="1" /><rect x="5.5" y="6" width="3" height="12" rx="1" /><rect x="15.5" y="6" width="3" height="12" rx="1" /><rect x="19.5" y="9" width="2.5" height="6" rx="1" /><path d="M8.5 12h7" />',
     pfeil: '<path d="M7 7h10v10" /><path d="M7 17 17 7" />',
     uhr: '<circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" />',
   };
@@ -23,6 +25,7 @@
     Sprachen: { farbe: "spr", kurz: "Sprachen" },
     Gesellschaftswissenschaften: { farbe: "ges", kurz: "Gesellschaft" },
     Religionen: { farbe: "rel", kurz: "Religion" },
+    Sport: { farbe: "spo", kurz: "Sport" },
   };
 
   // Fächerkürzel wie im Stundenplan (Fachname beginnt mit …)
