@@ -28,6 +28,11 @@ const BUECHER = {
     },
     Religionen: {
       "Katholisch Mom": "https://jsgkar.sharepoint.com/:b:/s/1k2KatholischeReligionMom26-27/IQDU86k2ONSmR5IWpN-IcCGZAb653Hs0JWWH1nqQupn1tek?e=FogZ7V",
+      "Ethik": "",
+    },
+    Sport: {
+      S1: "",
+      S2: "",
     },
   },
 
