@@ -94,7 +94,16 @@
       </p>
     </footer>
 
-    <script src="buecher.js"></script>
-    <script src="app.js"></script>
+    <script>
+      // buecher.js wird oft geändert: immer frisch laden statt bis zu 10 Min. aus dem Browser-Cache
+      const daten = document.createElement("script");
+      daten.src = "buecher.js?t=" + Date.now();
+      daten.onload = () => {
+        const app = document.createElement("script");
+        app.src = "app.js?v=3";
+        document.body.append(app);
+      };
+      document.body.append(daten);
+    </script>
   </body>
 </html>
