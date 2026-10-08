@@ -23,6 +23,8 @@
   --ges-soft: #fbeddb;
   --rel: #7046b6;
   --rel-soft: #eee7fa;
+  --spo: #b42d47;
+  --spo-soft: #fbe4e8;
 
   --c: var(--navy);
   --c-soft: var(--surface-2);
@@ -51,6 +53,8 @@
     --ges-soft: rgba(240, 169, 92, 0.15);
     --rel: #b596ee;
     --rel-soft: rgba(181, 150, 238, 0.16);
+    --spo: #f2849a;
+    --spo-soft: rgba(242, 132, 154, 0.15);
 
     color-scheme: dark;
   }
@@ -60,6 +64,7 @@
 .fb-spr { --c: var(--spr); --c-soft: var(--spr-soft); }
 .fb-ges { --c: var(--ges); --c-soft: var(--ges-soft); }
 .fb-rel { --c: var(--rel); --c-soft: var(--rel-soft); }
+.fb-spo { --c: var(--spo); --c-soft: var(--spo-soft); }
 
 *,
 *::before,
