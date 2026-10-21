@@ -15,6 +15,8 @@
       '<path d="M12 2v6" /><path d="M9 5h6" /><path d="M6 22V12l6-4 6 4v10" /><path d="M10 22v-4a2 2 0 0 1 4 0v4" /><path d="M2 22h20" />',
     Sport:
       '<rect x="2" y="9" width="2.5" height="6" rx="1" /><rect x="5.5" y="6" width="3" height="12" rx="1" /><rect x="15.5" y="6" width="3" height="12" rx="1" /><rect x="19.5" y="9" width="2.5" height="6" rx="1" /><path d="M8.5 12h7" />',
+    Tools:
+      '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z" />',
     pfeil: '<path d="M7 7h10v10" /><path d="M7 17 17 7" />',
     uhr: '<circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" />',
   };
@@ -26,6 +28,20 @@
     Gesellschaftswissenschaften: { farbe: "ges", kurz: "Gesellschaft" },
     Religionen: { farbe: "rel", kurz: "Religion" },
     Sport: { farbe: "spo", kurz: "Sport" },
+    Tools: { farbe: "tool", kurz: "Tools" },
+  };
+
+  // Eingebaute Werkzeuge je Klasse (öffnen sich direkt auf der Seite)
+  const TOOLS = {
+    12: [
+      {
+        id: "matrizen",
+        name: "Matrizenrechner",
+        badge: "A·B",
+        meta: "Rechnen mit Matrizen",
+        suche: "matrix matrizen rechner mathe lineare algebra determinante inverse gauss",
+      },
+    ],
   };
 
   // Fächerkürzel wie im Stundenplan (Fachname beginnt mit …)
@@ -183,6 +199,7 @@
     uebersicht.insertAdjacentHTML(
       "beforeend",
       `<div class="legend" aria-hidden="true">${Object.entries(FACHBEREICHE)
+        .filter(([name]) => name !== "Tools")
         .map(([, { farbe, kurz }]) => `<span class="legend-item fb-${farbe}"><i></i>${kurz}</span>`)
         .join("")}</div>`,
     );
@@ -241,7 +258,50 @@
           </section>`;
       })
       .join("");
+    inhalt.insertAdjacentHTML("beforeend", toolsBauen(klasse, i));
   }
+
+  function toolsBauen(klasse, start) {
+    const liste = TOOLS[klasse];
+    if (!liste) return "";
+    const kacheln = liste
+      .map(
+        (t, n) => `
+        <button type="button" class="tile tool-tile" data-tool="${t.id}" aria-expanded="false" aria-controls="tool-${t.id}"
+          data-suche="${esc(normalisieren(`${t.name} ${t.suche} tools`))}" style="--i:${start + n}">
+          <span class="tile-badge">${esc(t.badge)}</span>
+          <span class="tile-text">
+            <span class="tile-name">${esc(t.name)}</span>
+            <span class="tile-meta">${esc(t.meta)}</span>
+          </span>
+          <svg class="tile-arrow tool-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+        </button>
+        <div class="tool-panel" id="tool-${t.id}" hidden></div>`,
+      )
+      .join("");
+    return `
+      <section class="fachbereich fb-tool">
+        <header class="fb-head">
+          <span class="fb-icon">${icon("Tools")}</span>
+          <h2 class="fb-title">Tools</h2>
+          <span class="fb-count">${liste.length}</span>
+        </header>
+        <div class="tiles">${kacheln}</div>
+      </section>`;
+  }
+
+  inhalt.addEventListener("click", (e) => {
+    const kachel = e.target.closest(".tool-tile");
+    if (!kachel) return;
+    const panel = $(`tool-${kachel.dataset.tool}`);
+    const auf = panel.hidden;
+    panel.hidden = !auf;
+    kachel.setAttribute("aria-expanded", String(auf));
+    if (auf && !panel.dataset.bereit) {
+      panel.dataset.bereit = "1";
+      window.Matrizenrechner.mount(panel);
+    }
+  });
 
   function heroSetzen(eyebrow, titel, text) {
     $("hero-eyebrow").textContent = eyebrow;
